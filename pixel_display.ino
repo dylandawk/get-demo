@@ -63,6 +63,8 @@ void runLED(float temp, float humidity) {
 
   //calculate height based on humidity
   int pixel_h = map(humidity, 50, 150, 0, NUM_ROWS - 1);
+
+  //print results
   Serial.print("Color: ");
   Serial.print("red: "); Serial.print(red);
   Serial.print(", green: "); Serial.print(green);
@@ -74,6 +76,7 @@ void runLED(float temp, float humidity) {
     for (int col = 0; col < NUM_COLS; col ++) {
       if (NUM_ROWS - 1 - row <= pixel_h && pixelArray[row][col] != -1) {
         if (pixelArray[row][col] % 2 == 0) {
+          //assign color to every other pixel
           pixels.setPixelColor(pixelArray[row][col], red, blue, green, 50);
         }
       }
