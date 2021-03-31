@@ -8,10 +8,7 @@ void initializePixelArray() {
 
       // top row assignment
       if (row == 0) {
-        if (col == 0 || col == NUM_COLS - 1) {
-          pixelArray[row][col] = -1;
-        }
-        else {
+        if (col != 0 || col != NUM_COLS - 1) {
           pixelArray[row][col] = topRow;
           topRow --;
         }
@@ -19,21 +16,14 @@ void initializePixelArray() {
 
       // left col assignment
       if (col == 0) {
-        if (row == 0 || row == NUM_ROWS - 1) {
-          pixelArray[row][col] = -1;
-        }
-        else {
+        if (row != 0 || row != NUM_ROWS - 1) {
           pixelArray[row][col] = leftCol;
           leftCol ++;
-        }
       }
 
       // bottom row assignment
       if (row == NUM_ROWS - 1) {
-        if (col == 0 || col == NUM_COLS - 1) {
-          pixelArray[row][col] = -1;
-        }
-        else {
+        if (col != 0 || col != NUM_COLS - 1) {
           pixelArray[row][col] = bottomRow;
           bottomRow ++;
         }
@@ -41,10 +31,7 @@ void initializePixelArray() {
 
       // left col assignment
       if (col == NUM_COLS - 1) {
-        if (row == 0 || row == NUM_ROWS - 1) {
-          pixelArray[row][col] = -1;
-        }
-        else {
+        if (row != 0 || row != NUM_ROWS - 1) {
           pixelArray[row][col] = rightCol;
           rightCol --;
         }
@@ -56,7 +43,6 @@ void initializePixelArray() {
       } else {
         Serial.println(pixelArray[row][col]);
       }
-
     }
   }
 }
